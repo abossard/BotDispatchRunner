@@ -190,15 +190,9 @@
     <Reference Include="Sampler">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\Sampler.dll</HintPath>
     </Reference>
-    <!--    <Reference Include="System.CodeDom">
-      <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\System.CodeDom.dll</HintPath>
-    </Reference>-->
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\System.ComponentModel.Composition.dll</HintPath>
     </Reference>
-    <!--    <Reference Include="System.IO.Packaging">
-      <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\System.IO.Packaging.dll</HintPath>
-    </Reference>-->
     <Reference Include="System.Runtime.CompilerServices.Unsafe">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
