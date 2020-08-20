@@ -22,7 +22,7 @@ namespace BotDispatch.Runner
             var asm = Assembly.GetExecutingAssembly();
             var path = System.IO.Path.GetDirectoryName(asm.Location);
             var arguments = Path.Join(path, "Dispatch.dll") + " " + arg;
-            return await ProcessAsyncHelper.ExecuteShellCommand(workingDirectory, "dotnet", arguments, 1000);
+            return await ProcessAsyncHelper.ExecuteShellCommand(workingDirectory, "dotnet", arguments, 10000);
         }
     }
 }

@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotDispatch.Runner", "BotDi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotDispatch.NPM", "BotDispatch.NPM\BotDispatch.NPM.csproj", "{AD4EAF8D-9BEA-48ED-8F47-F0D8399BEA42}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotDispatch.Function", "BotDispatch.Function\BotDispatch.Function.csproj", "{DAB00C83-7E97-4935-A06E-9CDA3F086011}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,18 @@ Global
 		{AD4EAF8D-9BEA-48ED-8F47-F0D8399BEA42}.Release|x64.Build.0 = Release|Any CPU
 		{AD4EAF8D-9BEA-48ED-8F47-F0D8399BEA42}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD4EAF8D-9BEA-48ED-8F47-F0D8399BEA42}.Release|x86.Build.0 = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|x64.Build.0 = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Debug|x86.Build.0 = Debug|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|x64.ActiveCfg = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|x64.Build.0 = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|x86.ActiveCfg = Release|Any CPU
+		{DAB00C83-7E97-4935-A06E-9CDA3F086011}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
