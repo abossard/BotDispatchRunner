@@ -1,0 +1,12 @@
+{
+  "name": "abossard.botdispatch.npm",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "botdispatch": "^1.7.1"
+  }
+}
