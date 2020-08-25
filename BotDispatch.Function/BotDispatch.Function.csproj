@@ -19,7 +19,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
-  <ItemGroup>
+  <!-- <ItemGroup>
     <ContentWithTargetPath Include="..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\CpuMathNative.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>CpuMathNative.dll</TargetPath>
@@ -42,7 +42,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <TargetPath>bin/AugmentLuisModelSettings.json</TargetPath>
     </ContentWithTargetPath>
-  </ItemGroup>
+  </ItemGroup> -->
   <Target Name="BeforeResolveReferences">
     <RemoveDuplicates Inputs="@(LibReferenceSearchPathFiles->'%(RootDir)%(Directory)')">
       <Output TaskParameter="Filtered" ItemName="LibReferenceSearchPath" />
@@ -51,7 +51,7 @@
       <Output TaskParameter="Value" PropertyName="AssemblySearchPaths" />
     </CreateProperty>
   </Target>
-  <ItemGroup>
+  <!-- <ItemGroup>
     <Reference Include="Fuse.Core">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\Fuse.Core.dll</HintPath>
     </Reference>
@@ -202,7 +202,7 @@
     <Reference Include="UtilityNetStandard">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\UtilityNetStandard.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup> -->
   <ItemGroup>
     <ProjectReference Include="..\BotDispatch.NPM\BotDispatch.NPM.csproj" />
   </ItemGroup>
