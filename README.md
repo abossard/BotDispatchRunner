@@ -17,7 +17,7 @@ The Bot Dispatch runner is an example how to use the [Bot Dispatch CLI](https://
 ## Usage
 
 ### Console Application
-- check [BotDispatch.Runner](./BotDispatch.Runner)
+- check [BotDispatch.NPM](./BotDispatch.NPM)
 - added all references with hints in the .csproj
 
 ### Azure Function

@@ -7,9 +7,6 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.7" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotDispatch.Runner\BotDispatch.Runner.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -205,5 +202,8 @@
     <Reference Include="UtilityNetStandard">
       <HintPath>..\BotDispatch.NPM\node_modules\botdispatch\bin\netcoreapp2.1\UtilityNetStandard.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BotDispatch.NPM\BotDispatch.NPM.csproj" />
   </ItemGroup>
 </Project>

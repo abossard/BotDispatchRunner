@@ -1,15 +1,13 @@
-using System;
 using System.IO;
 using System.Threading.Tasks;
+using BotDispatch.NPM;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.Diagnostics;
 
-namespace BotDispatch.Runner
+namespace BotDispatch.Function
 {
     public static class HttpTriggerDispatch
     {
@@ -19,13 +17,10 @@ namespace BotDispatch.Runner
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
-
-
             var workingDirectory = Path.Join(Path.GetTempPath(), "dispatch");
             log.LogInformation(workingDirectory);
             var dispatchRunner = new DispatchRunner(workingDirectory);
             var result = await dispatchRunner.RunDispatchAsync("-h");
-
             return new OkObjectResult(result.Output);
         }
     }

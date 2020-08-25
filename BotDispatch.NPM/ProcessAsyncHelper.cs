@@ -1,9 +1,10 @@
-﻿namespace BotDispatch.Runner
+﻿using System;
+using System.Diagnostics;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BotDispatch.NPM
 {
-    using System;
-    using System.Diagnostics;
-    using System.Text;
-    using System.Threading.Tasks;
     /// <summary>
     /// Adapted and modernized from https://gist.github.com/AlexMAS/276eed492bc989e13dcce7c78b9e179d#file-processasynchelper-cs
     /// </summary>
