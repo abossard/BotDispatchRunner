@@ -29,10 +29,11 @@ namespace BotDispatch.NPM
                 }
             };
 
-            var outputBuilder = new StringBuilder();
+            /*var outputBuilder = new StringBuilder();
             var outputCloseEvent = new TaskCompletionSource<bool>();
+            */
 
-            process.OutputDataReceived += (s, e) =>
+            /*process.OutputDataReceived += (s, e) =>
             {
                 // The output stream has been closed i.e. the process has terminated
                 if (e.Data == null)
@@ -43,12 +44,13 @@ namespace BotDispatch.NPM
                 {
                     outputBuilder.AppendLine(e.Data);
                 }
-            };
+            };*/
 
-            var errorBuilder = new StringBuilder();
+            /*var errorBuilder = new StringBuilder();
             var errorCloseEvent = new TaskCompletionSource<bool>();
+            */
 
-            process.ErrorDataReceived += (s, e) =>
+            /*process.ErrorDataReceived += (s, e) =>
             {
                 // The error stream has been closed i.e. the process has terminated
                 if (e.Data == null)
@@ -59,7 +61,7 @@ namespace BotDispatch.NPM
                 {
                     errorBuilder.AppendLine(e.Data);
                 }
-            };
+            };*/
 
             bool isStarted;
 
@@ -87,15 +89,16 @@ namespace BotDispatch.NPM
             var waitForExit = WaitForExitAsync(process, timeout);
 
             // Create task to wait for process exit and closing all output streams
-            var processTask = Task.WhenAll(waitForExit, outputCloseEvent.Task, errorCloseEvent.Task);
+            /*var processTask = Task.WhenAll(waitForExit, outputCloseEvent.Task, errorCloseEvent.Task);*/
 
             // Waits process completion and then checks it was not completed by timeout
-            if (await Task.WhenAny(Task.Delay(timeout), processTask) == processTask && waitForExit.Result)
+            var quitter = await Task.WhenAny(waitForExit, Task.Delay(timeout)); 
+            if (quitter == waitForExit && waitForExit.Result)
             {
                 result.Completed = true;
                 result.ExitCode = process.ExitCode;
-                result.Output = outputBuilder.ToString();
-                result.ErrorOutput = errorBuilder.ToString();
+                /*result.Output = outputBuilder.ToString();
+                result.ErrorOutput = errorBuilder.ToString();*/
             }
             else
             {
@@ -103,8 +106,8 @@ namespace BotDispatch.NPM
                 {
                     // Kill hung process
                     result.Completed = false;
-                    result.Output = outputBuilder.ToString();
-                    result.ErrorOutput = errorBuilder.ToString();
+                    /*result.Output = outputBuilder.ToString();
+                    result.ErrorOutput = errorBuilder.ToString();*/
                     process.Kill();
                 }
                 catch
@@ -123,7 +126,11 @@ namespace BotDispatch.NPM
 
         private static Task<bool> WaitForExitAsync(Process process, int timeout)
         {
-            return Task.Run(() => process.WaitForExit(timeout));
+            return Task.Run(() =>
+            {
+                var result= process.WaitForExit(timeout);
+                return result;
+            });
         }
 
 

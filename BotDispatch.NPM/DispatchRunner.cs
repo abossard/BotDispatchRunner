@@ -23,6 +23,8 @@ namespace BotDispatch.NPM
             {
                 Path.Combine(path ?? "./", "Dispatch.dll"),
                 Path.Combine(path ?? "./", "publish", "Dispatch.dll"),
+                Path.Combine(path ?? "./", "..", "DispatchTool", "Dispatch.dll"),
+                Path.Combine(path ?? "./", "DispatchTool", "Dispatch.dll"),
             };
 
             string GetValidPathOrFail()
@@ -39,7 +41,7 @@ namespace BotDispatch.NPM
             }
 
             var arguments = GetValidPathOrFail() + " " + arg;
-            return await ProcessAsyncHelper.ExecuteShellCommand(_workingDirectory, "dotnet", arguments, 60000);
+            return await ProcessAsyncHelper.ExecuteShellCommand(_workingDirectory, "dotnet", arguments, 4000);
         }
     }
 }

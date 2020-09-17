@@ -22,6 +22,7 @@ namespace BotDispatch.Function
             var dispatchRunner = new DispatchRunner(workingDirectory);
             var command = @"init -n mymodel --luisAuthoringKey 235e10f069154d48aa3729da6a13d36a --luisAuthoringRegion westeurope --dataFolder c:\\temp\\dispatch";
             var result = await dispatchRunner.RunDispatchAsync(command);
+            log.LogInformation("The Game is On {result}", result);
             return new OkObjectResult(result.Output);
         }
     }
