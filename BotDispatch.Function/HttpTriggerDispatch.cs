@@ -20,7 +20,8 @@ namespace BotDispatch.Function
             var workingDirectory = Path.Join(Path.GetTempPath(), "dispatch");
             log.LogInformation(workingDirectory);
             var dispatchRunner = new DispatchRunner(workingDirectory);
-            var result = await dispatchRunner.RunDispatchAsync("-h");
+            var command = @"init -n mymodel --luisAuthoringKey 235e10f069154d48aa3729da6a13d36a --luisAuthoringRegion westeurope --dataFolder c:\\temp\\dispatch";
+            var result = await dispatchRunner.RunDispatchAsync(command);
             return new OkObjectResult(result.Output);
         }
     }

@@ -39,7 +39,7 @@ namespace BotDispatch.NPM
             }
 
             var arguments = GetValidPathOrFail() + " " + arg;
-            return await ProcessAsyncHelper.ExecuteShellCommand(_workingDirectory, "dotnet", arguments, 10000);
+            return await ProcessAsyncHelper.ExecuteShellCommand(_workingDirectory, "dotnet", arguments, 60000);
         }
     }
 }

@@ -21,10 +21,10 @@ namespace BotDispatch.NPM
                     FileName = command,
                     Arguments = arguments,
                     UseShellExecute = false,
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    CreateNoWindow = true,
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = false,
+                    RedirectStandardError = false,
+                    CreateNoWindow = false,
                     WorkingDirectory = workingDirectory
                 }
             };
@@ -80,8 +80,8 @@ namespace BotDispatch.NPM
 
             if (!isStarted) return result;
             // Reads the output stream first and then waits because deadlocks are possible
-            process.BeginOutputReadLine();
-            process.BeginErrorReadLine();
+            //process.BeginOutputReadLine();
+            //process.BeginErrorReadLine();
 
             // Creates task to wait for process exit using timeout
             var waitForExit = WaitForExitAsync(process, timeout);
@@ -102,11 +102,18 @@ namespace BotDispatch.NPM
                 try
                 {
                     // Kill hung process
+                    result.Completed = false;
+                    result.Output = outputBuilder.ToString();
+                    result.ErrorOutput = errorBuilder.ToString();
                     process.Kill();
                 }
                 catch
                 {
                     // ignored
+                }
+                finally
+                {
+                    result.ExitCode = process.ExitCode;
                 }
             }
 
